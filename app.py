@@ -4,7 +4,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import warnings
+import os
 warnings.filterwarnings('ignore')
+
+# Always load CSV from same folder as app.py
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CSV_PATH = os.path.join(BASE_DIR, "cleaned_netflix_final__3_.csv")
 
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.preprocessing import LabelEncoder
@@ -29,7 +34,7 @@ st.markdown("---")
 # ── Load Data ─────────────────────────────────────────────────────────────────
 @st.cache_data
 def load_data():
-    df = pd.read_csv("cleaned_netflix_final__3_.csv")
+    df = pd.read_csv(CSV_PATH)
     # Handle missing values
     df['rating']       = df['rating'].fillna(df['rating'].mode()[0])
     df['duration']     = df['duration'].fillna(df['duration'].mode()[0])
