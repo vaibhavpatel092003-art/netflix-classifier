@@ -9,7 +9,7 @@ warnings.filterwarnings('ignore')
 
 # Always load CSV from same folder as app.py
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-CSV_PATH = os.path.join(BASE_DIR, "cleaned_netflix_final__3_.csv")
+CSV_PATH = os.path.join(BASE_DIR, "cleaned_netflix_final (3).csv")
 
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.preprocessing import LabelEncoder
